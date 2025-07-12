@@ -1,0 +1,187 @@
+@use './base/reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=LXGW+WenKai+TC&display=swap');
+
+
+body {
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+}
+
+.photo-bg {
+  background-image: url(/src/assets/dark-93182111.jpg);
+  background-repeat: no-repeat;
+  background-position: center bottom; 
+  background-size: cover;
+  background-attachment: fixed;
+
+  .photo-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+    .photo-item {
+      box-sizing: content-box;
+      width: 9rem;
+      height: 10rem;
+      background-color: #e6e5e0;
+      padding: 8px;
+      padding-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(158, 134, 125, 0.2);
+        pointer-events: none;
+      }
+
+      &.item-1 { top: 5.5rem; left: 2.5rem; transform: rotate(12deg); }
+      &.item-2 { top: 4rem; right: 2rem; transform: scale(1.1) rotate(-10deg); }
+      &.item-3 { top: 12rem; left: 8rem; transform: scale(1.1) rotate(8deg); z-index: 1;}
+      &.item-4 { top: 20rem; right: 2.5rem; transform: rotate(16deg); }
+      &.item-5 { top: 20rem; left: 2rem; transform: scale(1.1) rotate(-10deg); }
+      &.item-6 { top: 30rem; right: 2rem; transform: scale(0.9) rotate(12deg); }
+      &.item-7 { top: 30rem; left: 5rem; transform: scale(1.1) rotate(-3deg); }
+    
+      .perry-item {
+        width: 6rem;
+        position:absolute;
+        z-index: 1;
+
+        &.item-8 { top: 8rem; left: -1rem; transform: rotate(-12deg);}
+        &.item-9 { top: 8rem; right: -1rem; transform: rotate(12deg);}
+        &.item-10 { top: 8rem; right: -1rem; transform: rotate(12deg);}
+        &.item-11 { top: 8rem; left: -2rem; transform: rotate(12deg);}
+      }
+    }
+
+    .photo-content {
+      font-family: "Caveat", cursive;
+      font-size: 1.5rem;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate( -50%, -50% );
+      opacity: 0;
+    }
+  }
+
+  .letter {
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    font-size: 1rem;
+    // border: 1px solid #fff;
+
+    &-to {
+      padding: 5rem 0 1rem 0;
+      opacity: 0;
+      transform: translateY(10px);
+      overflow: hidden;
+    }
+
+    &-content {
+      opacity: 0;
+      transform: translateY(10px);
+      overflow: hidden;
+    }
+
+    &-from {
+      padding-top: 1rem; 
+      opacity: 0;
+      transform: translateY(10px);
+      overflow: hidden;
+    }
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+
+    .cd {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+
+      &__unit-group,
+      &__digits {
+        display: flex;
+        justify-content: center;
+      }
+
+      &__unit-group {
+        margin-bottom: 1.5em;
+      }
+
+      &__unit {
+        font-size: 3rem;
+        line-height: 1;
+        margin: 0 0.8rem;
+      }
+
+      &__digits {
+        height: 40%;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        
+        .cd__digit {
+          width: 2.5rem;
+        }
+
+      }
+
+      &__unit-label {
+        font-size: 1.2rem;
+      }
+    }
+
+    .together {
+      border: 1px solid #fff;
+      width: 200px;
+      padding: 0.6rem;
+      border-radius: 2rem;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      display: none;
+    }
+  }
+
+}
+
+.cd__unit-label {
+	font-size: 0.75rem;
+	line-height: 1;
+}
+
+
+
+.cd__digit--roll-in {
+	animation: rollIn 0.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes rollIn {
+	from { transform: translateY(-100%); }
+	to { transform: translateY(0); }
+}
+
+
